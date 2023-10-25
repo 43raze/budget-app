@@ -4,11 +4,14 @@
       <template v-if="!isEmpty">
         <div class="listItem" v-for="(item, prop) in list_item" :key="prop">
           <span class="budgetComment">{{ item.comment }}</span>
+
           <span class="budgetValue">{{ item.value }}</span>
+
           <ElButton type="danger" size="mini">Delete</ElButton>
         </div>
       </template>
-      <ElAlert v-else type="info" :title="emptyTitle" />
+
+      <ElAlert v-else type="info" :title="emptyTitle" :closable="false" />
     </ElCard>
   </div>
 </template>
